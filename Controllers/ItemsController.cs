@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AppServiceNet5.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] // or you can change "items"
     [ApiController]
     public class ItemsController : ControllerBase
     {
