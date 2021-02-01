@@ -56,5 +56,36 @@ namespace AppServiceNet5.Controllers
 
             return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item.AsDto());
         }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateItem(Guid id, UpdateItemDto itemDto)
+        {
+            var existingItem = _repository.GetItem(id);
+
+            if (existingItem is null)
+            {
+                return NotFound();
+            }
+
+            Item UpdateItem = existingItem with // this with new feature goes from RECORDS 
+            {
+                Name = itemDto.Name,
+                Price = itemDto.Price
+            };
+
+            _repository.UpdateItem(UpdateItem);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+
+        public ActionResult DeleteItem(Guid id)
+        {
+            var existingItem = _repository.GetItem(id);
+            _repository.DeleteItem(existingItem.Id);
+
+            return NoContent();
+        }
     }
 }

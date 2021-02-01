@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AppServiceNet5.Dtos
 {
-    public record CreateItemDto
+    public record UpdateItemDto
     {
         [Required]
         public string Name { get; init; }
-        
+
         [Required]
         [Range(1, 1000)]
         public decimal Price { get; init; }
