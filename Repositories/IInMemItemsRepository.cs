@@ -1,18 +1,19 @@
 ﻿using AppServiceNet5.Entities;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AppServiceNet5.Repositories
 {
     public interface IInMemItemsRepository
     {
-        Item GetItem(Guid id);
-        IEnumerable<Item> GetItems();
+        Task<Item> GetItemAsync(Guid id);
+        Task<IEnumerable<Item>> GetItemsAsync();
 
-        void CreateItem(Item item);
-        void UpdateItem(Item item);
+        Task CreateItemAsync(Item item);
+        Task UpdateItemAsync(Item item);
 
-        void DeleteItem(Guid id);
+        Task DeleteItemAsync(Guid id);
 
     }
 }

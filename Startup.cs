@@ -42,7 +42,9 @@ namespace AppServiceNet5
             services.AddSingleton<IInMemItemsRepository, MongoDbItemsRepository>();//Now using DBrepository to persistance data // to register our repository
 
 
-            services.AddControllers();
+            services.AddControllers(options => {
+                options.SuppressAsyncSuffixInActionNames = false;// remove suffix from async functions
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AppServiceNet5", Version = "v1" });
