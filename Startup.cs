@@ -71,13 +71,13 @@ namespace AppServiceNet5
                 app.UseSwagger();
                 app.UseSwaggerUI(c => {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "AppServiceNet5 v1");
-                    //c.RoutePrefix = "swagger";
-                    
                     }
-                
                 );
             }
-
+            if (env.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
             app.UseRouting();
 
             app.UseAuthorization();

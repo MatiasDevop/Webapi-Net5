@@ -13,8 +13,6 @@ D:\NET 5 Devlopment\AppServiceNet5\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagg
 D:\NET 5 Devlopment\AppServiceNet5\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\NET 5 Devlopment\AppServiceNet5\bin\Debug\net5.0\xunit.abstractions.dll
 D:\NET 5 Devlopment\AppServiceNet5\bin\Debug\net5.0\xunit.core.dll
-D:\NET 5 Devlopment\AppServiceNet5\obj\Debug\net5.0\AppServiceNet5.Resource.resources
-D:\NET 5 Devlopment\AppServiceNet5\obj\Debug\net5.0\AppServiceNet5.csproj.GenerateResource.cache
 D:\NET 5 Devlopment\AppServiceNet5\obj\Debug\net5.0\AppServiceNet5.GeneratedMSBuildEditorConfig.editorconfig
 D:\NET 5 Devlopment\AppServiceNet5\obj\Debug\net5.0\AppServiceNet5.AssemblyInfoInputs.cache
 D:\NET 5 Devlopment\AppServiceNet5\obj\Debug\net5.0\AppServiceNet5.AssemblyInfo.cs
