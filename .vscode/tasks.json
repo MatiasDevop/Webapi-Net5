@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/AppServiceNet5.csproj",
+                "${workspaceFolder}/Catalog.Api/Catalog.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -23,7 +23,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/AppServiceNet5.csproj",
+                "${workspaceFolder}/Catalog.Api/Catalog.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -36,7 +36,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/AppServiceNet5.csproj",
+                "${workspaceFolder}/Catalog.Api/Catalog.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
