@@ -1,5 +1,5 @@
 # Webapi-Net5
-Building a rest api with Net 5 learing C# 9 's new features as
+Building a rest api with Net 5 learning C# 9 and adding features as
 * Docker
 * Kubernetes
 * Mongodb
