@@ -39,6 +39,7 @@ namespace Catalog.Api.Controllers
         public async Task<ActionResult<ItemDto>> GetItemAsync(Guid id)
         {
             var item = await repository.GetItemAsync(id);
+            
             if (item is null)
             {
                 return NotFound();

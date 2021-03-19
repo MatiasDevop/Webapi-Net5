@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\NET 5 Devlopment\\AppServiceNet5\\build.proj": {}
+  },
+  "projects": {
+    "D:\\NET 5 Devlopment\\AppServiceNet5\\build.proj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\NET 5 Devlopment\\AppServiceNet5\\build.proj",
+        "projectName": "build",
+        "projectPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\build.proj",
+        "packagesPath": "C:\\Users\\nestdev\\.nuget\\packages\\",
+        "outputPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nestdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
