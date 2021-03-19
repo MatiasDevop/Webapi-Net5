@@ -3,6 +3,7 @@ using AppServiceNet5.Entities;
 using AppServiceNet5.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,26 +15,30 @@ namespace AppServiceNet5.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        private readonly IInMemItemsRepository _repository;
+        private readonly IInMemItemsRepository repository;
+        private readonly ILogger<ItemsController> logger;
 
-        public ItemsController(IInMemItemsRepository repository)
+        public ItemsController(IInMemItemsRepository repository, ILogger<ItemsController> logger)
         {
-            _repository = repository;
+            this.repository = repository;
+            this.logger = logger;
         }
 
 
         [HttpGet]
         public async Task<IEnumerable<ItemDto>> GetItemsAsync()
         {
-            var items = (await _repository.GetItemsAsync())
+            var items = (await repository.GetItemsAsync())
                     .Select(item => item.AsDto());
+            
+            logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrieved {items.Count()} items");
             return items;
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ItemDto>> GetItemAsync(Guid id)
         {
-            var item = await _repository.GetItemAsync(id);
+            var item = await repository.GetItemAsync(id);
             if (item is null)
             {
                 return NotFound();
@@ -52,7 +57,7 @@ namespace AppServiceNet5.Controllers
                 CreateDate = DateTimeOffset.UtcNow
             };
 
-            await _repository.CreateItemAsync(item);
+            await repository.CreateItemAsync(item);
 
             return CreatedAtAction(nameof(GetItemAsync), new { id = item.Id }, item.AsDto());
         }
@@ -60,7 +65,7 @@ namespace AppServiceNet5.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateItemAsync(Guid id, UpdateItemDto itemDto)
         {
-            var existingItem = await _repository.GetItemAsync(id);
+            var existingItem = await repository.GetItemAsync(id);
 
             if (existingItem is null)
             {
@@ -73,7 +78,7 @@ namespace AppServiceNet5.Controllers
                 Price = itemDto.Price
             };
 
-            await _repository.UpdateItemAsync(UpdateItem);
+            await repository.UpdateItemAsync(UpdateItem);
 
             return NoContent();
         }
@@ -82,8 +87,8 @@ namespace AppServiceNet5.Controllers
 
         public async Task<ActionResult> DeleteItemAsync(Guid id)
         {
-            var existingItem = await _repository.GetItemAsync(id);
-            await _repository.DeleteItemAsync(existingItem.Id);
+            var existingItem = await repository.GetItemAsync(id);
+            await repository.DeleteItemAsync(existingItem.Id);
 
             return NoContent();
         }
