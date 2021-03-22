@@ -43,7 +43,7 @@ namespace Catalog.Api
             {
                 return new MongoClient(mongoDbSettings.ConnectionString);
             });
-            services.AddSingleton<IInMemItemsRepository, MongoDbItemsRepository>();//Now using DBrepository to persistance data // to register our repository
+            services.AddSingleton<IItemsRepository, MongoDbItemsRepository>();//Now using DBrepository to persistance data // to register our repository
 
 
             services.AddControllers(options => {

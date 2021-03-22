@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.Api.Repositories
 {
-    public class MongoDbItemsRepository : IInMemItemsRepository
+    public class MongoDbItemsRepository : IItemsRepository
     {
         private const string databaseName = "catalog";
         private const string collectionName = "items";

@@ -121,3 +121,7 @@ D:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\runtimes\w
 D:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
 D:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\Catalog.Api.dll
 D:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\Catalog.Api.pdb
+d:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\FluentAssertions.dll
+d:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+d:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+d:\NET 5 Devlopment\AppServiceNet5\Catalog.UnitTests\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll

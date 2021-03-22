@@ -15,10 +15,10 @@ namespace Catalog.Api.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        private readonly IInMemItemsRepository repository;
+        private readonly IItemsRepository repository;
         private readonly ILogger<ItemsController> logger;
 
-        public ItemsController(IInMemItemsRepository repository, ILogger<ItemsController> logger)
+        public ItemsController(IItemsRepository repository, ILogger<ItemsController> logger)
         {
             this.repository = repository;
             this.logger = logger;
