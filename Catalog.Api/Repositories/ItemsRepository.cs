@@ -10,9 +10,9 @@ namespace Catalog.Api.Repositories
     {
         private readonly List<Item> items = new() // new feature on C# 9 list<item>.....
         {
-            new Item { Id = Guid.NewGuid(), Name = "Potion", Price = 9, CreateDate = DateTimeOffset.UtcNow },
-            new Item { Id = Guid.NewGuid(), Name = "Division II", Price = 20, CreateDate = DateTimeOffset.UtcNow },
-            new Item { Id = Guid.NewGuid(), Name = "War Craft", Price = 18, CreateDate = DateTimeOffset.UtcNow }
+            new Item { Id = Guid.NewGuid(), Name = "Potion", Price = 9, CreatedDate = DateTimeOffset.UtcNow },
+            new Item { Id = Guid.NewGuid(), Name = "Division II", Price = 20, CreatedDate = DateTimeOffset.UtcNow },
+            new Item { Id = Guid.NewGuid(), Name = "War Craft", Price = 18, CreatedDate = DateTimeOffset.UtcNow }
         };
 
         public async Task<IEnumerable<Item>> GetItemsAsync()

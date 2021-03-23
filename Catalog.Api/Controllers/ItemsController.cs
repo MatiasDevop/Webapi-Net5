@@ -1,4 +1,5 @@
-﻿using Catalog.Api.Dtos;
+﻿
+using Catalog.Api.Dtos;
 using Catalog.Api.Entities;
 using Catalog.Api.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -55,7 +56,7 @@ namespace Catalog.Api.Controllers
                 Id = Guid.NewGuid(),
                 Name = itemDto.Name,
                 Price = itemDto.Price,
-                CreateDate = DateTimeOffset.UtcNow
+                CreatedDate = DateTimeOffset.UtcNow
             };
 
             await repository.CreateItemAsync(item);
@@ -73,13 +74,15 @@ namespace Catalog.Api.Controllers
                 return NotFound();
             }
 
-            Item UpdateItem = existingItem with // this with new feature goes from RECORDS 
-            {
-                Name = itemDto.Name,
-                Price = itemDto.Price
-            };
+            existingItem.Name = itemDto.Name;
+            existingItem.Price = itemDto.Price;
+            // Item UpdateItem = existingItem with // this with new feature goes from RECORDS 
+            // {
+            //     Name = itemDto.Name,
+            //     Price = itemDto.Price
+            // };
 
-            await repository.UpdateItemAsync(UpdateItem);
+            await repository.UpdateItemAsync(existingItem);
 
             return NoContent();
         }
@@ -89,6 +92,12 @@ namespace Catalog.Api.Controllers
         public async Task<ActionResult> DeleteItemAsync(Guid id)
         {
             var existingItem = await repository.GetItemAsync(id);
+
+            if (existingItem is null)
+            {
+                return NotFound();
+            }
+
             await repository.DeleteItemAsync(existingItem.Id);
 
             return NoContent();

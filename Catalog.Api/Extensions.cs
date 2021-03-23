@@ -1,4 +1,5 @@
-﻿using Catalog.Api.Dtos;
+﻿
+using Catalog.Api.Dtos;
 using Catalog.Api.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,14 @@ namespace Catalog.Api
     {
         public static ItemDto AsDto(this Item item)
         {
-            return new ItemDto
-            {
-                Id = item.Id,
-                Name = item.Name,
-                Price = item.Price,
-                CreateDate = item.CreateDate
-            };
+            // new form or way to do
+            return new ItemDto(item.Id, item.Name, item.Description, item.Price, item.CreatedDate);
+            // {
+            //     Id = item.Id,
+            //     Name = item.Name,
+            //     Price = item.Price,
+            //     CreatedDate = item.CreateDate
+            // };
         }
     }
 }
