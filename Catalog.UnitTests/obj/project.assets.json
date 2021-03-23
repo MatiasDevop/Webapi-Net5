@@ -7210,11 +7210,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.UnitTests\\Catalog.UnitTests.csproj",
+      "projectUniqueName": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.UnitTests\\Catalog.UnitTests.csproj",
       "projectName": "Catalog.UnitTests",
-      "projectPath": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.UnitTests\\Catalog.UnitTests.csproj",
+      "projectPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.UnitTests\\Catalog.UnitTests.csproj",
       "packagesPath": "C:\\Users\\nestdev\\.nuget\\packages\\",
-      "outputPath": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.UnitTests\\obj\\",
+      "outputPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7234,8 +7234,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj": {
-              "projectPath": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj"
+            "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj": {
+              "projectPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj"
             }
           }
         }

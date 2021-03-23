@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj": {}
+    "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj": {}
   },
   "projects": {
-    "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj": {
+    "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj",
+        "projectUniqueName": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj",
         "projectName": "Catalog.Api",
-        "projectPath": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj",
+        "projectPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\Catalog.Api.csproj",
         "packagesPath": "C:\\Users\\nestdev\\.nuget\\packages\\",
-        "outputPath": "d:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\obj\\",
+        "outputPath": "D:\\NET 5 Devlopment\\AppServiceNet5\\Catalog.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

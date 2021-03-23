@@ -27,12 +27,18 @@ namespace Catalog.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetItemsAsync()
+        public async Task<IEnumerable<ItemDto>> GetItemsAsync(string name = null)
         {
             var items = (await repository.GetItemsAsync())
                     .Select(item => item.AsDto());
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                items = items.Where(item => item.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+            }
             
             logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrieved {items.Count()} items");
+            
             return items;
         }
 
@@ -55,6 +61,7 @@ namespace Catalog.Api.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = itemDto.Name,
+                Description = itemDto.Description,
                 Price = itemDto.Price,
                 CreatedDate = DateTimeOffset.UtcNow
             };
@@ -102,5 +109,10 @@ namespace Catalog.Api.Controllers
 
             return NoContent();
         }
+
+        // public async  Task<IEnumerable<ItemDto>> GetItemsAsync(string nameToMatch)
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }

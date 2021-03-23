@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Catalog.Api.Controllers;
 using Catalog.Api.Dtos;
@@ -54,9 +55,7 @@ namespace Catalog.UnitTests
             var result = await controller.GetItemAsync(Guid.NewGuid());
             
             //Assert
-            result.Value.Should().BeEquivalentTo(
-                expectedItem,
-                options => options.ComparingByMembers<Item>());
+            result.Value.Should().BeEquivalentTo(expectedItem);
 
             // this is not best practice
             // Assert.IsType<ItemDto>(result.Value);
@@ -79,13 +78,39 @@ namespace Catalog.UnitTests
             var actualItems = await controller.GetItemsAsync();
             
             // Assert
-            actualItems.Should().BeEquivalentTo(
-                expectedItems,
-                options => options.ComparingByMembers<Item>());
+            actualItems.Should().BeEquivalentTo(expectedItems);
 
         }
 
-         [Fact]
+        [Fact]
+        public async Task GetItemsAsync_WithMatchingItems_ReturnsMatchingItems()           
+        {
+            // Arrange
+            var allItems = new[] { 
+               
+               new Item(){ Name = "Potion"},
+               new Item(){ Name = "Antidote"},
+               new Item(){ Name = "Hi-Potion"}
+            };
+
+            var nameToMatch = "Potion";
+
+            repositoryStub.Setup(repo => repo.GetItemsAsync())
+                .ReturnsAsync(allItems);
+
+            var controller = new ItemsController(repositoryStub.Object, loggerStub.Object);    
+            // Act
+            IEnumerable<ItemDto> foundItems = await controller.GetItemsAsync(nameToMatch);
+            
+            // Assert
+            foundItems.Should().OnlyContain(
+                item => item.Name == allItems[0].Name || item.Name == allItems[2].Name
+            );
+
+        }
+
+
+        [Fact]
         public async Task CreateItemAsync_WithItemToCreate_ReturnsCreatedItem()           
         {
             // Arrange
