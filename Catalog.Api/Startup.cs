@@ -20,6 +20,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
+using Stripe;
 
 namespace Catalog.Api
 {
@@ -49,6 +50,9 @@ namespace Catalog.Api
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;// remove suffix from async functions
             });
+
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AppServiceNet5", Version = "v1" });
@@ -65,6 +69,8 @@ namespace Catalog.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            StripeConfiguration.ApiKey = "sk_test_51JEtYWHVGJMQ5oqkeQAwNfIa6HgccyqVozsGoQOXzy1GxPDrcWeN00m94nUAZsebb9iLadZHjeTUrdXRMYFWcUkk00sHYrthWz";
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
