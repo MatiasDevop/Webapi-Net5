@@ -22,7 +22,8 @@ namespace Catalog.Api.Controllers
         [Route("PayProcess")]
         public async Task<IActionResult> Pay([FromBody]PaymentModel pm)
         {
-            return await MakePayment.PayAsync(pm.CardNumber, pm.Month, pm.Year,pm.Cvc, pm.Value);
+            var response = await MakePayment.PayAsync(pm.CardNumber, pm.Month, pm.Year,pm.Cvc, pm.Value);
+            return Ok(response);
         } 
 
         [HttpPost]
