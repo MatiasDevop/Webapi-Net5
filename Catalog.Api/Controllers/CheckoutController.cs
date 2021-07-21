@@ -1,4 +1,7 @@
 using System;
+using System.Threading.Tasks;
+using Catalog.Api.Entities;
+using Catalog.Api.Payment;
 using Microsoft.AspNetCore.Mvc;
 using Stripe;
 
@@ -14,6 +17,13 @@ namespace Catalog.Api.Controllers
         // {
             
         // }
+
+        [HttpPost]
+        [Route("PayProcess")]
+        public async Task<IActionResult> Pay([FromBody]PaymentModel pm)
+        {
+            return await MakePayment.PayAsync(pm.CardNumber, pm.Month, pm.Year,pm.Cvc, pm.Value);
+        } 
 
         [HttpPost]
         public IActionResult Processing(string stripeToken, string stripeEmail)
